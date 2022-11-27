@@ -672,7 +672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 10
   _speedRot: 50
-  _jumpStrength: 10
+  _jumpStrength: 5
   rigi: {fileID: 1638745444}
   checkgroundPosition: {x: 0, y: -0.5, z: 0}
   isGround: 0
