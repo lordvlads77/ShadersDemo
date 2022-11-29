@@ -40,12 +40,6 @@ Shader "Custom/6"
 			c.rgb = lerp(tex2.rgb,c.rgb,c.a);
 
 			o.Albedo = c.rgb;
-
-			//Use the below two lines if you want the rock part be diffuse but lava part is unlit
-			//o.Albedo = c.rgb*c.a;
-			//o.Emission = c.rgb*(1-c.a);
-
-
 			o.Alpha = c.a;
 
 		}
