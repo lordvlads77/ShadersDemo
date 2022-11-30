@@ -37,11 +37,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DisTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d0692a948ca573d4cb0b93ffb1c8a033, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DslTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1d557bc533f5684438d25d03042b1025, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -133,7 +133,7 @@ Material:
     - _tTAE: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DslEC: {r: 1, g: 1, b: 1, a: 1}
+    - _DslEC: {r: 0, g: 1, b: 0.60867333, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Pan1: {r: 0, g: 0, b: 0, a: 0}
     - _Pan2: {r: 0, g: 0, b: 0, a: 0}
@@ -155,5 +155,5 @@ Material:
     - _Tile3: {r: 1, g: 1, b: 0, a: 0}
     - _TileDs: {r: 1, g: 1, b: 0, a: 0}
     - _TileDsl: {r: 1, g: 1, b: 0, a: 0}
-    - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _TintColor: {r: 0.48567724, g: 1, b: 0, a: 0.5}
   m_BuildTextureStacks: []
