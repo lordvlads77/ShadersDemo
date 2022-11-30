@@ -15,7 +15,7 @@ Properties {
 	_DslEA ("Dissolve Edge Alpha", Range(0,1)) = 0
 	_BiasDsl("Distortion", Float) = 1
 	_ScaleDsl("Scale(XY) Dissolve, PivotXY(ZW))", Vector) = (1,1,0.5,0.5)
-	[Enum(Off,0,On,1)] _dslTAE("Animation <1>", Float) = 0.0			//togle dissolveTextureAnimationEnable
+	[Enum(Off,0,On,1)] _dslTAE("Animation <1>", Float) = 0.0		
 	_TileDsl("Tile Dissolve Columns(X), Rows(Y), FPS(Z), Frame(W)", Vector) = (1,1,0,0)
 	_PanDsl("Pan Dissolve (Speed(XY))", Vector) = (0,0,0,0)
 	_RotDsl("Rot Dissolve (Pivot(XY), Angle Speed(Z), Angle(W))", Vector) = (0.5,0.5,0,0)
@@ -24,7 +24,7 @@ Properties {
 	_DisTex("Distortion", 2D) = "bump" {}
 	_BiasDs("Global Distortion", Float) = 0
 	_ScaleDis("Scale(XY), PivotXY(ZW))", Vector) = (1,1,0.5,0.5)
-	[Enum(Off,0,On,1)] _dTAE("Animation <1>", Float) = 0.0			//togle distortionTextureAnimationEnable
+	[Enum(Off,0,On,1)] _dTAE("Animation <1>", Float) = 0.0			
 	_TileDs("Tile Distortion Columns(X), Rows(Y), FPS(Z), Frame(W)", Vector) = (1,1,0,0)
 	_PanDs("Pan Distortion (Speed(XY))", Vector) = (0,0,0,0)
 	_RotDs("Rot Distortion (Pivot(XY), Angle Speed(Z), Angle(W))", Vector) = (0.5,0.5,0,0)
@@ -35,7 +35,7 @@ Properties {
 	_invAlpha1("Invert Alpha Texture(A) <1>", Range(0,1) ) = 0
 	_BiasMT("Distortion FX Texture(RGBA) <1>", Float) = 1
 	_Scale("Scale(XY) <1>, PivotXY(ZW))", Vector) = (1,1,0.5,0.5)
-	[Enum(Off,0,On,1)] _fTAE("Animation <1>", Float) = 0.0 			//togle firstTextureAnimationEnable
+	[Enum(Off,0,On,1)] _fTAE("Animation <1>", Float) = 0.0 			
 	_Tile1("Tile <1> Columns(X), Rows(Y), FPS(Z), Frame(W)", Vector) = (1,1,0,0)
 	_Pan1("Pan <1> (Speed(XY))", Vector) = (0,0,0,0)
 	_Rot1("Rot <1> (Pivot(XY), Angle Speed(Z), Angle(W))", Vector) = (0.5,0.5,0,0)
@@ -46,7 +46,7 @@ Properties {
 	_invAlpha2("Invert Alpha Texture(A) <2>", Range(0,1) ) = 0
 	_BiasMT2("Distortion FX Texture(RGBA) <2>", Float) = 1
 	_Scale2("Scale(XY) <2>, PivotXY(ZW))", Vector) = (1,1,0.5,0.5)
-	[Enum(Off,0,On,1)] _sTAE ("Animation <2>", Float) = 0.0 		//togle secondTextureAnimationEnable
+	[Enum(Off,0,On,1)] _sTAE ("Animation <2>", Float) = 0.0 		
 	_Tile2("Tile <2> Columns(X), Rows(Y), FPS(Z), Frame(W)", Vector) = (1,1,0,0)
 	_Pan2("Pan <2> (Speed(XY))", Vector) = (0,0,0,0)
 	_Rot2("Rot <2> (Pivot(XY), Angle Speed(Z), Angle(W))", Vector) = (0.5,0.5,0,0)
@@ -57,7 +57,7 @@ Properties {
 	_invAlpha3("Invert Alpha Texture(A) <3>", Range(0,1) ) = 0
 	_BiasMT3("Distortion FX Texture(RGBA) <3>", Float) = 1
 	_Scale3("Scale(XY) <3>, PivotXY(ZW))", Vector) = (1,1,0.5,0.5)
-	[Enum(Off,0,On,1)] _tTAE ("Animation <3>", Float) = 0.0 		//togle thirdTextureAnimationEnable
+	[Enum(Off,0,On,1)] _tTAE ("Animation <3>", Float) = 0.0 		
 	_Tile3("Tile <3> Columns(X), Rows(Y), FPS(Z), Frame(W)", Vector) = (1,1,0,0)
 	_Pan3("Pan <3> (Speed(XY))", Vector) = (0,0,0,0)
 	_Rot3("Rot <3> (Pivot(XY), Angle Speed(Z), Angle(W))", Vector) = (0.5,0.5,0,0)
@@ -65,28 +65,28 @@ Properties {
 	_InvFade ("Soft Particles Factor", Range(0.01,5.0)) = 5.0
 	
 	//----------------------------------------------------
-	[HideInInspector] _Mode ("__mode", Float) = 0.0 //save blending mode
+	[HideInInspector] _Mode ("__mode", Float) = 0.0 
 	[HideInInspector] _SrcBlend ("__src", Float) = 1.0 
 	[HideInInspector] _DstBlend ("__dst", Float) = 1.0
-	[HideInInspector] _Queue ("__queue", Float) = 3000.0 //save render queue
+	[HideInInspector] _Queue ("__queue", Float) = 3000.0 
 	
-	[HideInInspector] _dslT ("__dslt", Float) = 1.0  	//foldout dissolveTexture
-	[HideInInspector] _dslTA("__dslta", Float) = 0.0 	//foldout dissolveTextureAnimation
-	[HideInInspector] _dT ("__dt", Float) = 1.0  	//foldout distortionTexture
-	[HideInInspector] _dTA("__dta", Float) = 0.0 	//foldout distortionTextureAnimation
-	[HideInInspector] _fT ("__ft", Float) = 1.0  	//foldout firstTexture
-	[HideInInspector] _fTA("__fta", Float) = 0.0 	//foldout firstTextureAnimation
-	[HideInInspector] _sT ("__st", Float) = 1.0 	//foldout secondTexture
-	[HideInInspector] _sTA ("__sta", Float) = 0.0 	//foldout secondTextureAnimation
-	[HideInInspector] _tT ("__st", Float) = 1.0		//foldout thirdTexture
-	[HideInInspector] _tTA ("__sta", Float) = 0.0	//foldout thirdTextureAnimation
+	[HideInInspector] _dslT ("__dslt", Float) = 1.0  	
+	[HideInInspector] _dslTA("__dslta", Float) = 0.0 	
+	[HideInInspector] _dT ("__dt", Float) = 1.0  	
+	[HideInInspector] _dTA("__dta", Float) = 0.0 	
+	[HideInInspector] _fT ("__ft", Float) = 1.0  
+	[HideInInspector] _fTA("__fta", Float) = 0.0 	
+	[HideInInspector] _sT ("__st", Float) = 1.0 
+	[HideInInspector] _sTA ("__sta", Float) = 0.0 	
+	[HideInInspector] _tT ("__st", Float) = 1.0		
+	[HideInInspector] _tTA ("__sta", Float) = 0.0
 }
 
 Category {
 	Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
 	Blend [_SrcBlend] [_DstBlend]
-	Cull Off //Back | Front | Off
-	ZWrite Off //On | Off
+	Cull Off 
+	ZWrite Off 
 
 	SubShader {
 		Pass {
@@ -207,17 +207,15 @@ Category {
 
 			sampler2D_float _CameraDepthTexture;
 			float _InvFade;
-			//u = UV, t = Tile, p = Pan, r = Rot
 			float2 UV_TPR(float2 u, float4 t, float4 p, float4 r)			
 			{
-				//Panoraming & Rotating Animation
+
 				float2 v = float2((r.x-((u.x-r.x)*cos((r.z*_Time.y)+(3.14159265359f*(1+(r.w/180))))-(u.y-r.y)*sin((r.z*_Time.y)+(3.14159265359f*(1+(r.w/180))))))+(p.x*_Time.y),(r.y-((u.x-r.x)*sin((r.z*_Time.y)+(3.14159265359f*(1+(r.w/180))))+(u.y-r.y)*cos((r.z*_Time.y)+(3.14159265359f*(1+(r.w/180))))))+(p.y*_Time.y));
-				//Tile Animation
+	
 				v = float2(v.x/t.x+floor(_Time.y*t.z+t.w)/t.x,(v.y+t.y-1)/t.y-floor(floor(_Time.y*t.z+t.w)/t.x)/t.y);
 				return  v;
 			}
 
-			//Scale
 			float4 _Scale;
 			float4 _Scale2;
 			float4 _Scale3;
@@ -250,16 +248,16 @@ Category {
 					else ds = tex2D(_DisTex,i.discoord);
 								
 				if(_DisTexType < 0.5)
-					dso = ParallaxOffset(1, _BiasDs, UnpackNormal(ds)); //Parallax
-					else dso = ParallaxOffset((ds.r+ds.g+ds.b)/3, _BiasDs, (ds.r+ds.g+ds.b)/3); //Parallax
+					dso = ParallaxOffset(1, _BiasDs, UnpackNormal(ds)); 
+					else dso = ParallaxOffset((ds.r+ds.g+ds.b)/3, _BiasDs, (ds.r+ds.g+ds.b)/3); 
 				
 				i.texcoord = Scale(i.texcoord,_Scale);
 				if(_fTAE > 0.5)
 					c = tex2D(_MainTex,UV_TPR(i.texcoord,_Tile1,_Pan1,_Rot1)+dso*_BiasMT);
 					else c = tex2D(_MainTex,i.texcoord+dso*_BiasMT);
-				c.rgb = lerp(c.rgb,1-c.rgb,_inv1).rgb; //invert texture
-				c.a = lerp(c.a,1-c.a,_invAlpha1); //invert alpha channel
-				c.a = lerp(c.a,1,_Alpha1); //On - Off alpha channel
+				c.rgb = lerp(c.rgb,1-c.rgb,_inv1).rgb; 
+				c.a = lerp(c.a,1-c.a,_invAlpha1); 
+				c.a = lerp(c.a,1,_Alpha1); 
 				
 				
 				if(_numberTex > 0.5)
@@ -268,9 +266,9 @@ Category {
 					if(_sTAE > 0.5)				
 					d = tex2D(_MainTex2,UV_TPR(i.texcoord2,_Tile2,_Pan2,_Rot2)+dso*_BiasMT2);
 					else d = tex2D(_MainTex2,i.texcoord2+dso*_BiasMT2);
-					d.rgb = lerp(d.rgb,1-d.rgb,_inv2).rgb; //invert texture
-					d.a = lerp(d.a,1-d.a,_invAlpha2); //invert alpha channel
-					d.a = lerp(d.a,1,_Alpha2); //On - Off alpha channel
+					d.rgb = lerp(d.rgb,1-d.rgb,_inv2).rgb; 
+					d.a = lerp(d.a,1-d.a,_invAlpha2); 
+					d.a = lerp(d.a,1,_Alpha2); 
 				}
 				
 				if(_numberTex > 1.5)
@@ -279,76 +277,75 @@ Category {
 					if(_tTAE > 0.5)				
 					e = tex2D(_MainTex3,UV_TPR(i.texcoord3,_Tile3,_Pan3,_Rot3)+dso*_BiasMT3);
 					else e = tex2D(_MainTex3,i.texcoord3+dso*_BiasMT3);
-					e.rgb = lerp(e.rgb,1-e.rgb,_inv3).rgb; //invert texture
-					e.a = lerp(e.a,1-e.a,_invAlpha3); //invert alpha channel
-					e.a = lerp(e.a,1,_Alpha3); //On - Off alpha channel
+					e.rgb = lerp(e.rgb,1-e.rgb,_inv3).rgb; 
+					e.a = lerp(e.a,1-e.a,_invAlpha3); 
+					e.a = lerp(e.a,1,_Alpha3);
 				}
 				
-				//mul mul		
+
 				if(_rgbc == 0)	{if(_numberTex > 0.5){c.rgb *= d.rgb;}	if(_numberTex > 1.5){c.rgb *= e.rgb;}}
-				//add add
+
 				if(_rgbc == 1)	{if(_numberTex > 0.5){c.rgb += d.rgb;}	if(_numberTex > 1.5){c.rgb += e.rgb;}}
-				//mul add
+
 				if(_rgbc == 2)	{if(_numberTex > 0.5){c.rgb *= d.rgb;}	if(_numberTex > 1.5){c.rgb += e.rgb;}}
-				//add mul
+
 				if(_rgbc == 3)	{if(_numberTex > 0.5){c.rgb += d.rgb;}	if(_numberTex > 1.5){c.rgb *= e.rgb;}}
 				
-				//mul mul
+
 				if(_ac == 0)	{if(_numberTex > 0.5){c.a *= d.a;}		if(_numberTex > 1.5){c.a *= e.a;}}
-				//add add
+
 				if(_ac == 1)	{if(_numberTex > 0.5){c.a += d.a;}		if(_numberTex > 1.5){c.a += e.a;}}
-				//mul add
+	
 				if(_ac == 2)	{if(_numberTex > 0.5){c.a *= d.a;}		if(_numberTex > 1.5){c.a += e.a;}}
-				//add mul
+				
 				if(_ac == 3)	{if(_numberTex > 0.5){c.a += d.a;}		if(_numberTex > 1.5){c.a *= e.a;}}
 								
-				if(_Mode == 0)//Additive
+				if(_Mode == 0)
 				{
 					c = 2.0f * i.color * _TintColor * c;
 					UNITY_APPLY_FOG_COLOR(i.fogCoord, c, fixed4(0,0,0,0));
 				}
-				if (_Mode == 1)//Aditive Multiply
+				if (_Mode == 1)
 				{
 					c.rgb = i.color.rgb * _TintColor.rgb * c.rgb * 2.0f;
 					c.a = (1-c.a) * (_TintColor.a * i.color.a * 2.0f);
 					UNITY_APPLY_FOG_COLOR(i.fogCoord, c, fixed4(0,0,0,0));
 				}
-				if (_Mode == 2)//Additive Soft
+				if (_Mode == 2)
 				{ 
 					c = 2.0f * i.color * _TintColor * c;
 					c.rgb *= c.a;
 					UNITY_APPLY_FOG_COLOR(i.fogCoord, c, fixed4(0,0,0,0));
 				}
-				if (_Mode == 3)//Alpha Blend
+				if (_Mode == 3)
 				{
 					c = 2.0f * i.color * _TintColor * c;
 					UNITY_APPLY_FOG(i.fogCoord, c);
 				}
-				if (_Mode == 4)//Blend
+				if (_Mode == 4)
 				{
 					c = i.color * _TintColor * c;
 					UNITY_APPLY_FOG_COLOR(i.fogCoord, c, fixed4(0,0,0,0));
 				}
-				if (_Mode == 5)//Multiply
+				if (_Mode == 5)
 				{
 					c = i.color * _TintColor * c;
 					c = lerp(half4(1,1,1,1), c, c.a);
 					UNITY_APPLY_FOG_COLOR(i.fogCoord, c, fixed4(1,1,1,1));
 				}
-				if (_Mode == 6)//Multiply Double
+				if (_Mode == 6)
 				{
 					c.rgb = 2.0f * i.color.rgb * _TintColor.rgb * c.rgb;
 					c.a = i.color.a * _TintColor.a * c.a;
 					c = lerp(fixed4(0.5f,0.5f,0.5f,0.5f), c, c.a);
 					UNITY_APPLY_FOG_COLOR(i.fogCoord, c, fixed4(0.5,0.5,0.5,0.5));
 				}
-				if (_Mode == 7)//Alpha Blended Premultiply
+				if (_Mode == 7)
 				{
 					c = i.color * _TintColor * c * i.color.a;
 				}
 				
-				
-				//Dissolve
+			
 				fixed4 dt;
 				fixed er;
 				i.dslcoord4 = Scale(i.dslcoord4,_ScaleDsl);
@@ -357,13 +354,13 @@ Category {
 					else dt = tex2D(_DslTex, i.dslcoord4+dso*_BiasDsl);
 					
 				dt.a = er = (dt.r+dt.g+dt.b)/3;
-				dt.a = _DslGl >= dt.a ? 0 : 1;//Calculate dissolve
-				er = _DslGl+_DslER >= er ? 0 : 1;//Calculate dissolve edge range
-				//Apply Dissolve Edge & intensity				
+				dt.a = _DslGl >= dt.a ? 0 : 1;//calculamos que tanto se disuelve
+				er = _DslGl+_DslER >= er ? 0 : 1;
+				//aplicamos aqui la intensidad			
 				c.rgb = lerp(lerp(c.rgb,_DslEC.rgb*lerp(c.a,1,_DslEA),_DslEI),c.rgb,er) * dt.a;
 				c.a *= dt.a;
 				
-				c.rgb = (1-(1-(c.rgb*_Con))*_Con + _Bri) * c.a;//Brightness, Contrast
+				c.rgb = (1-(1-(c.rgb*_Con))*_Con + _Bri) * c.a;
 				return c;
 			}
 			ENDCG 

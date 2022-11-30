@@ -9,6 +9,7 @@ Shader "Custom/5"
 		_HoloDistance ("Holo Distance", Range(0,1)) = 0.5
 		_HoloDirection("Holo Direction", Vector) = (0,1,0,0)
 		[Space(10)]
+		//esto es más configuración para el shader
 		_EmissionMultiplier("Emission Multiplier", Float) = 1
 		_GlitchStrength("Glitch Strength", Range(0,0.1)) = 0
 		_GlitchDensity("Glitch Density", Float) = 0
@@ -54,6 +55,7 @@ Shader "Custom/5"
 		void vert(inout appdata_full v, out Input o)    
         {    
 			UNITY_INITIALIZE_OUTPUT(Input,o)
+			//esto me servirá para configurar los vertices que tenga ese efecto raro
             v.vertex.y += sin(_GlitchPeriod * _Time.y + v.vertex.x * _GlitchDensity)*_GlitchStrength * _GlitchDirection.y;
 			v.vertex.x += sin(_GlitchPeriod * _Time.y + v.vertex.y * _GlitchDensity)*_GlitchStrength * _GlitchDirection.x;
 			v.vertex.z += sin(_GlitchPeriod * _Time.y + v.vertex.z * _GlitchDensity)*_GlitchStrength * _GlitchDirection.z;

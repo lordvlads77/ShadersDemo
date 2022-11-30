@@ -60,6 +60,7 @@ Shader "Custom/2"
             }
 
             struct appdata {
+                //usare vertex para mover cada uno de los vertices en modo efecto especial dandole toque chido
                 float4 vertex : POSITION;
                 float4 tangent : TANGENT;
                 float3 normal : NORMAL;
@@ -70,6 +71,7 @@ Shader "Custom/2"
             };
 
             void vert(inout appdata v) {
+                //con esto aplicare en el unity ya sea mas velocidad o amplitud al efecto
                 v.vertex.y = sin((_Time.y + v.vertex.x) * _Speed) * _Amplitude;
             }
 

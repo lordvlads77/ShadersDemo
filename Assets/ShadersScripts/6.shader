@@ -15,7 +15,7 @@ Shader "Custom/6"
 
 		CGPROGRAM
 		#pragma surface surf Lambert noforwardadd
-
+		//distorsiones para que tenga efecto de lava D:
 		sampler2D _MainTex;
 		sampler2D _Distort;
 		sampler2D _LavaTex;
@@ -37,6 +37,7 @@ Shader "Custom/6"
 			uv_scroll = fixed2(IN.uv2_LavaTex.x - distort * _DistortX,IN.uv2_LavaTex.y - distort * _DistortY);
 
 			fixed4 tex2 = tex2D(_LavaTex,uv_scroll);
+			//hacemos una operación para el calculo de shader
 			c.rgb = lerp(tex2.rgb,c.rgb,c.a);
 
 			o.Albedo = c.rgb;

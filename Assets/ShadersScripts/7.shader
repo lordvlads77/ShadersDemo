@@ -23,7 +23,6 @@ Shader "Custom/7"
         ZWrite[_ZWrite]
 
           CGPROGRAM
-        // #pragma surface surf Standard vertex:vert nofog nolightmap nodynlightmap keepalpha noinstancing
           #pragma surface surf Standard vertex:vert keepalpha
           #pragma target 3.0
           #pragma shader_feature_local _ _ALPHATEST_ON _ALPHABLEND_ON _ALPHAPREMULTIPLY_ON
@@ -43,14 +42,17 @@ Shader "Custom/7"
           void vert(inout appdata_full v, out Input o)
           {
               UNITY_INITIALIZE_OUTPUT(Input, o);
+              //a cada vertex le ponemos un color(es mas prueba que nada pero avr que pasa)
               o.vertColor.x = v.color.r;
               o.vertColor.y = v.color.g;
               o.vertColor.z = v.color.b;
               o.vertColor.w = _Alpha;
+              //salió bien xd
           }
 
           void surf(Input IN, inout SurfaceOutputStandard o)
           {
+              //para añadir mas metallic o smoot
                o.Albedo = LinearToGammaSpace(pow(IN.vertColor.rgb, _Albedo));
                o.Metallic = _Metallic;
                o.Smoothness = _Smoothness;

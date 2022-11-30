@@ -22,10 +22,9 @@ Shader "Custom/4"
 			LOD 200
 
 			CGPROGRAM
-			 // Modelo de iluminación estándar basado físicamente y habilita sombras en todos los tipos de luz
+			 // Modelo de iluminación :D
 			 #pragma surface surf Standard fullforwardshadows addshadow vertex:vert
 
-			 //Use el objetivo Shader Model 3.0 para obtener una iluminación más agradable
 			 #pragma target 3.0
 
 			 sampler2D _MainTex;
@@ -55,20 +54,19 @@ Shader "Custom/4"
 				 float4 direction = normalize(_ModelOrigin - _ImpactOrigin);
 				 float4 origin = _ImpactOrigin + _ControlTime * _ImpactSpeed * direction;
 
-				 //Obtenga la distancia en el espacio mundial desde nuestro vértice hasta el origen de la onda.
+				
 				 float dist = distance(world_space_vertex, origin);
 
-				 //Ajusta nuestra distancia para que no sea lineal.
+			
 				 dist = pow(dist, _WaveFalloff);
 
-				 //Establezca la cantidad máxima que se puede distorsionar una onda en función de la distancia.
 				 dist = max(dist, _MaxWaveDistortion);
 
-				 //Convierta la dirección y _ImpactOrigin en el espacio modelo para la magia trigonométrica posterior.
+				
 				 float4 l_ImpactOrigin = mul(unity_WorldToObject, _ImpactOrigin);
 				 float4 l_direction = mul(unity_WorldToObject, direction);
 
-				 //Magic
+				
 				 float impactAxis = l_ImpactOrigin + dot((v.vertex - l_ImpactOrigin), l_direction);
 
 				 v.vertex.xyz += v.normal * sin(impactAxis * _Frequency + _ControlTime * _WaveSpeed) * _Amplitude * (1 / dist);

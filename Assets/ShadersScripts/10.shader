@@ -18,25 +18,20 @@ Properties {
 
 Category {
 
-	// We must be transparent, so other objects are drawn before this one.
+
 	Tags { "Queue"="Transparent" "RenderType"="Opaque" }
 	ZWrite Off
 	Cull Off
 	
 	SubShader {
 
-		// This pass grabs the screen behind the object into a texture.
-		// We can access the result in the next pass as _GrabTexture
+	
 		GrabPass {
-			//Name "BASE"
-			//Tags { "LightMode" = "Always" }
+		
 		}
 		
-		// Main pass: Take the texture grabbed above and use the bumpmap to perturb it
-		// on to the screen
+	
 		Pass {
-			//Name "BASE"
-			//Tags { "LightMode" = "Always" }
 			
 CGPROGRAM
 #pragma target 3.0
@@ -107,7 +102,7 @@ v2f vert (appdata_t v){
 
 			float2 UV_TPR(float2 u, float4 t, float4 p, float4 r)			
 			{
-				float2 v = float2((r.x-((u.x-r.x)*cos((r.z*_Time.y)+(3.14159265359f*(1+(r.w/180))))-(u.y-r.y)*sin((r.z*_Time.y)+(3.14159265359f*(1+(r.w/180))))))+(p.x*_Time.y),(r.y-((u.x-r.x)*sin((r.z*_Time.y)+(3.14159265359f*(1+(r.w/180))))+(u.y-r.y)*cos((r.z*_Time.y)+(3.14159265359f*(1+(r.w/180))))))+(p.y*_Time.y));
+				float2 v = float2((r.x-((u.x-r.x)*cos((r.z*_Time.y)+(3.14159265359f*(1+(r.w/180))))-(u.y-r.y)*sin((r.z*_Time.y)+(3.14159265359f*(1+(r.w/180))))))+(p.x*_Time.y),(r.y-((u.x-r.x)*sin((r.z*_Time.y)+(3.14159265359f*(1+(r.w/180))))+(u.y-r.y)*cos((r.z*_Time.y)+(3.14159265359f*(1+(r.w/180))))))+(p.y*_Time.y));//tremenda linea
 				v = float2(v.x/t.x+floor(_Time.y*t.z+t.w)/t.x,(v.y+t.y-1)/t.y-floor(floor(_Time.y*t.z+t.w)/t.x)/t.y);
 				return  v;
 			}
@@ -115,21 +110,22 @@ v2f vert (appdata_t v){
 half4 frag (v2f i) : SV_Target
 {
 	half4 flatBump = float4(0.5f,0.5f,1.0f,0.5f);
-	// calculate perturbed coordinates
+
 	float4 bump = tex2D( _BumpMap, UV_TPR( i.uvbump, _Tile1, _Pan1, _Rot1));
 			bump +=	tex2D(_BumpMap2, UV_TPR(i.uvbump2, _Tile2, _Pan2, _Rot2));
 			bump /=2;
+			//cuanta cantidad del bump map dividimos e igualamos
 
 	half4 mask = tex2D(_Mask, i.uvmask);
 	bump = float4( lerp(UnpackNormal(flatBump), UnpackNormal(bump), mask.rgb),1);
 
 	float2 offset = bump.rg * _BumpAmt * _BumpAmt * _GrabTexture_TexelSize.xy;
 	
-	//Dissolve
+
 	float4 dt;
 	dt = tex2D(_aDslTex,UV_TPR(i.dslcoord3,_aTileDsl,_aPanDsl,_aRotDsl));
 	dt.a = (dt.r+dt.g+dt.b)/3;
-	dt.a = _aDslGl >= dt.a ? 0 : 1;//Calculate Dissolve
+	dt.a = _aDslGl >= dt.a ? 0 : 1;//calculamos el disolve 
 	half2 n = UnpackNormal(fixed4(0.5,0.5,1,0.5));
 	offset = lerp(n,offset,dt.a);
 	

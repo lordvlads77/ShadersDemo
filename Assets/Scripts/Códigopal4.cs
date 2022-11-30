@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Códigopal4 : MonoBehaviour
 {
+    //este script es basicamente para que reaccione dandole click al shader
     RaycastHit hit;
     Ray clickRay;
 

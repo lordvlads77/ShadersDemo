@@ -42,7 +42,7 @@ Shader "Custom/3"
 
             half _Glossiness;
             half _Metallic;
-
+            //le agregare un estilo navideño con esto
             fixed4 _SnowColor;
             sampler2D _SnowNormal;
 
@@ -73,6 +73,7 @@ Shader "Custom/3"
             }
 
             struct appdata {
+                //usaré mas floats para declarar posiciones, tangentes y demás
                 float4 vertex : POSITION;
                 float4 tangent : TANGENT;
                 float3 normal : NORMAL;

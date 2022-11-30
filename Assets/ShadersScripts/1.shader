@@ -2,6 +2,7 @@ Shader "Custom/1"
 {
     Properties
     {
+        //todas las propiedas que se usan en este shader
         _Color("Color", Color) = (1,1,1,1)
         _MainTex("MainTex", 2D) = "white" {}
         _Normal("Normal map", 2D) = "bump" {}
@@ -15,6 +16,7 @@ Shader "Custom/1"
             Tags{ "RenderType" = "Transparent" "Queue" = "Transparent"}
             Blend SrcAlpha OneMinusSrcAlpha
             LOD 100
+            //el que me permite hacer que se vea transparente y demás
             Cull[_Cull]
             Lighting Off
             ZWrite On
@@ -41,6 +43,7 @@ Shader "Custom/1"
             fixed4 pixel, alphaPixel;
             void surf(Input IN, inout SurfaceOutputStandard o)
             {
+                //esta parte provocara el sentido a donde fluye el shader
                 IN.uv_NoiseTex += _MovementDirection * _Time.y / 10.0;
                 IN.uv_MainTex += _MovementDirection * _Time.y;
                 IN.uv_Normal += _MovementDirection * _Time.y / 10.0;

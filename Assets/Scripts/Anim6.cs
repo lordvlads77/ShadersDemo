@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Anim6 : MonoBehaviour
 {
-	//public int materialIndex = 0;
+	//me activa la animación c:
 	public Vector2 uvAnimationRate = new Vector2(1.0f, 0.0f);
 	public string textureName = "_MainTex";
 
